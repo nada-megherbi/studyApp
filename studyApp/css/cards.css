@@ -1,0 +1,117 @@
+/* Style du composant Empty State */
+.empty-state {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  max-width: 650px;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+}
+
+.pointer-arrow {
+  color: #6366f1;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.empty-state-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.empty-state h2 {
+  color: #2a91bd;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.empty-state p {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.empty-state p strong {
+  color: #ffffff;
+}
+
+/* 1. La grille qui aligne automatiquement les cartes */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 2. Le style d'une carte individuelle */
+.module-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Effet au survol de la souris */
+.module-card:hover {
+  transform: translateY(-5px);
+  border-color: #6366f1;
+}
+
+/* 3. L'en-tête (Icône + Titre) */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.card-icon {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.module-title {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* 4. La description */
+.module-description {
+  color: #94a3b8;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* 5. Le bouton d'accès au Drive */
+.btn-drive {
+  display: block;
+  text-align: center;
+  background-color: #6366f1;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-drive:hover {
+  background-color: #4f46e5;
+}
