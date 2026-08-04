@@ -1,60 +1,53 @@
 <!DOCTYPE html>
-<html lang="an">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudyApp - Vos Cartes</title>
+  <title>StudyApp </title>
   
   <!-- 1. Le CSS global commun à toute l'équipe -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- 2. Votre propre fichier CSS pour les cartes (si vous l'avez séparé) -->
+  <!-- 2. Votre propre fichier CSS pour les cartes -->
   <link rel="stylesheet" href="css/cards.css">
 </head>
 <body>
-    <div class="empty-state">
-        <div class="pointer-arrow">▲</div>
-        <div class="empty-state-icon">📚</div>
-        <h2>Welcome to your Study Area !</h2>
-        <p>Select your <strong>Specialization</strong> and 
-          <strong>Semester</strong> above to view your modules.
-        </p>
 
-    </div>
+  <div class="filter-bar">
+       <!-- Specialty Filter -->
+      <div class="filter-group">
+         <label for="select-specialty">Specialty</label>
+       <select id="select-specialty" class="filter-select">
+         <option value="">-- Choose Specialty --</option>
+         <option value="tc">Tronc Commun (S1 - S4)</option>
+         <option value="res">Networks & Telecoms (S5 - S10)</option>
+       </select>
+      </div>
 
-    <div class="modules-grid">
+        <!-- Semester Filter (laissé vide par défaut, JavaScript va le remplir) -->
+      <div class="filter-group">
+        <label for="select-semester">Semester</label>
+        <select id="select-semester" class="filter-select" disabled>
+         <option value="">-- Choose Semester --</option>
+        </select>
+      </div>
 
-     <!-- Carte ASD 1 (Semestre 1) -->
-       <article class="module-card">
-          <div class="card-header">
-            <div class="card-icon">💻</div>
-            <h3 class="module-title">ADS 1 (Semester 1)</h3>
-          </div>
-          <p class="module-description">
-            Introduction to algorithms, variables, loops, functions, and arrays.
-          </p>
-          <a href="https://drive.google.com" target="_blank" class="btn-drive">
-             Access Drive ↗
-          </a>
-       </article>
+  </div> 
 
-     <!-- Carte ASD 2 (Semestre 2) -->
-       <article class="module-card">
-         <div class="card-header">
-            <div class="card-icon">⚡</div>
-            <h3 class="module-title">ADS 2 (Semester 2)</h3>
-         </div>
-         <p class="module-description">
-          Advanced data structures, linked lists, stacks, queues.
-         </p>
-         <a href="https://drive.google.com" target="_blank" class="btn-drive">
-           Access Drive ↗
-         </a>
-       </article>
+  <!-- FIX 1: Added id="empty-state" so cards.js can hide it -->
+  <div id="empty-state" class="empty-state">
+      <div class="pointer-arrow">▲</div>
+      <div class="empty-state-icon">📚</div>
+      <h2>Welcome to your Study Area !</h2>
+      <p>Select your <strong>Specialization</strong> and 
+        <strong>Semester</strong> above to view your modules.
+      </p>
+  </div>
 
-    </div>
+  <!-- FIX 2: Added missing container where cards.js injects cards -->
+  <div id="modules-grid" class="modules-grid hidden"></div>
 
-  <!-- Le contenu de vos cartes viendra ici -->
+  <script src="js/cards.js"></script>
 
 </body>
 </html>
