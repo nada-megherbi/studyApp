@@ -11,7 +11,7 @@ const m = (id, specialty, semester, icon, title, description, driveUrl) => ({
  * Configures which semesters belong to each specialty choice.
  */
 const semesterOptionsMap = {
-  // Tronc Commun (Ingéniorat / LMD) : S1, S2, S3, S4
+  // Tronc Commun (Ingéniorat ) : S1, S2, S3, S4
   tc: [
     { value: "s1", label: "Semester 1 (S1)" },
     { value: "s2", label: "Semester 2 (S2)" },
