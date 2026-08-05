@@ -1,0 +1,138 @@
+/*--- LE STYLE DE LA BARRE DE RECHERCHE PRINCIPALE --- */
+.search-container {
+
+
+background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+   max-width: 650px;
+  margin-top: 40px;  /* Pousse la barre vers le bas */
+  margin-left: 500px;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+
+width: 100%;
+   /* max-width: 700px; /* Adaptez à votre mise en page */
+    position: sticky;
+
+/* 2. L'arrondi des coins */
+border-radius: 20px;
+
+
+
+
+/* Effet de flou de l'arrière-plan (optionnel, mais très moderne) */
+backdrop-filter: blur(10px);
+
+/* Espacement interne */
+padding: 8px 16px;
+
+/* Alignement interne pour le texte et l'icône */
+display: flex;
+align-items: center;
+}
+/* --- LE STYLE DE L'INPUT (LE CHAMP DE TEXTE) --- */
+.search-container input {
+    
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300; 
+
+/* Couleur du texte saisi */
+color: #e0e0e0; /* Gris très clair, presque blanc */
+
+/* Supprimer les bordures par défaut */
+border: none;
+background: transparent;
+width: 100%;
+
+/* Enlever l'effet de sélection bleu de base du navigateur */
+outline: none;
+
+/* Ajuster l'espacement pour laisser de la place à l'icône */
+padding-right: 30px;
+}
+/* --- LE STYLE DU PLACEHOLDER ("Search for...") --- /
+/ (Le texte par défaut quand on n'a rien écrit) */
+.search-container input::placeholder {
+    color: rgba(180, 190, 200, 0.6); /* Gris-bleu clair et transparent */
+}
+/* --- LE STYLE DE L'ICÔNE LOUPE (OPTIONNEL) --- */
+.search-container img {
+    position: absolute;
+    right: 16px;
+    color: rgba(180, 190, 200, 0.6); /* Même couleur que le placeholder */
+    font-size: 16px;
+    pointer-events: none; /*L'utilisateur clique "à travers" l'icône */
+}
+/* Container principal (la carte avec l'effet glassmorphism) */
+.searchs {
+  /* Vos styles personnalisés */
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: 0 auto 20px auto;
+  /* Disposition interne */
+  align-items: center;
+  display: flex;
+  flex-direction: column; /* Place le texte <p> au-dessus des éléments */
+  gap: 6px;               /* Espace réduit entre le titre et les sélecteurs */
+  padding: 10px 21px;       /* Rembourrage global réduit */
+  border-radius: 20px;
+  width: fit-content;
+  max-width: 100%;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Style du paragraphe (<p>) */
+.searchs > p {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  color: #e2e8f0;
+  letter-spacing: 1px;
+}
+.inputs-row {
+  display: flex;
+  flex-direction: row; /* Alignement horizontal */
+  gap: 25px; /* Espace entre Speciality et Semesters */
+  width: 100%;
+}
+/* Alignement côte à côte des sélecteurs (Speciality & Semesters) */
+.search-input {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  flex: 1;
+}
+/* Pour mettre les sélecteurs sur la même ligne */
+/* Enrobage moderne des selects */
+.search-input label {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+.search-input select {
+  background: rgba(15, 23, 42, 0.6);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 10px;        /* Épaisseur (height) réduite */
+  border-radius: 6px;
+  font-size: 0.82rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.search-input select:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+}
+.search-input select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}
+/* Style des options du menu déroulant */
+.search-input select option {
+  background-color: #1e293b;
+  color: #ffffff;
+}
