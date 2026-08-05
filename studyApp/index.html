@@ -10,8 +10,67 @@
 
   <!-- 2. Votre propre fichier CSS pour les cartes -->
   <link rel="stylesheet" href="css/cards.css">
+  <!-- 3. Votre propre fichier CSS pour navigation -->
+  <link rel="stylesheet" href="css/navigation.css">
+
+
 </head>
 <body>
+
+   <div class="search-container">
+        <input type="text" class="search" placeholder="Cherche for modules...">
+        <img src="Screenshot 2026-07-30 202608.png" alt="loupe">
+
+
+    </div>
+    <br>
+    <div class="searchs">
+      <p> Speciality  -->  Semesters </p>
+      <div class="inputs-row">
+      <div class="search-input">
+        <label for="Speciality">Speciality: </label>
+        <select id="Speciality" name="Speciality">
+          <option value="Computer Science">Computer Science</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Physics">Physics</option>
+          <option value="Chemistry">Chemistry</option>
+        </select>
+      </div>
+     
+      <div class="search-input">
+         <label for="Semester">Semester: </label>
+        <select id="Semester" name="Semester">
+          <option value="1st semester">1st semester</option>
+          <option value="2nd semester">2nd semester</option>
+          <option value="3th semester">3th semester</option>
+          <option value="4th semester">4th semester</option>
+          <option value="5th semester">5th semester</option>
+          <option value="6th semester">6th semester</option>
+          <option value="7th semester">7th semester</option>
+          <option value="8th semester">8th semester</option>
+          <option value="9th semester">9th semester</option>
+          <option value="10th semester">10th semester</option>
+        </select>
+      </div>
+      </div>
+
+
+    </div>
+
+    <div class="empty-state">
+        <div class="pointer-arrow">▲</div>
+        <div class="empty-state-icon">📚</div>
+        <h2>Welcome to your Study Area !</h2>
+        <p>Select your <strong>Specialization</strong> and 
+          <strong>Semester</strong> above to view your modules.
+        </p>
+
+
+    </div>
+
+    
+
+
 
   <div class="filter-bar">
        <!-- Specialty Filter -->
