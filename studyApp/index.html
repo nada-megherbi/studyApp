@@ -17,94 +17,49 @@
 </head>
 <body>
 
-   <div class="search-container">
-        <input type="text" class="search" placeholder="Cherche for modules...">
-        <img src="Screenshot 2026-07-30 202608.png" alt="loupe">
-
-
+ <div class="container">
+    <!-- Barre de recherche -->
+    <div class="search-container">
+      <input type="text" id="search-input" class="search" placeholder="Rechercher un module...">
+      <span>🔍</span>
     </div>
-    <br>
+
+    <!-- Menus de sélection (Filtres) -->
     <div class="searchs">
-      <p> Speciality  -->  Semesters </p>
-      <div class="inputs-row">
-      <div class="search-input">
-        <label for="Speciality">Speciality: </label>
-        <select id="Speciality" name="Speciality">
-          <option value="Computer Science">Computer Science</option>
-          <option value="Mathematics">Mathematics</option>
-          <option value="Physics">Physics</option>
-          <option value="Chemistry">Chemistry</option>
-        </select>
-      </div>
-     
-      <div class="search-input">
-         <label for="Semester">Semester: </label>
-        <select id="Semester" name="Semester">
-          <option value="1st semester">1st semester</option>
-          <option value="2nd semester">2nd semester</option>
-          <option value="3th semester">3th semester</option>
-          <option value="4th semester">4th semester</option>
-          <option value="5th semester">5th semester</option>
-          <option value="6th semester">6th semester</option>
-          <option value="7th semester">7th semester</option>
-          <option value="8th semester">8th semester</option>
-          <option value="9th semester">9th semester</option>
-          <option value="10th semester">10th semester</option>
-        </select>
-      </div>
-      </div>
+      <p>Speciality    ---->    Semester</p>
 
+      <div class="filter-bar">
+        <!-- Spécialité -->
+        <div class="filter-group">
+          <label for="select-specialty">Speciality</label>
+          <select id="select-specialty" class="filter-select">
+            <option value="">-- Select the Speciality --</option>
+            <option value="tc">Tronc Commun (S1 - S4)</option>
+            <option value="res">Réseaux & Télécoms (S5 - S6)</option>
+          </select>
+        </div>
 
+        <!-- Semestre -->
+        <div class="filter-group">
+          <label for="select-semester">Semester</label>
+          <select id="select-semester" class="filter-select" disabled>
+            <option value="">-- Select the Semestre --</option>
+          </select>
+        </div>
+      </div>
     </div>
 
-    <div class="empty-state">
-        <div class="pointer-arrow">▲</div>
-        <div class="empty-state-icon">📚</div>
-        <h2>Welcome to your Study Area !</h2>
-        <p>Select your <strong>Specialization</strong> and 
-          <strong>Semester</strong> above to view your modules.
-        </p>
-
-
-    </div>
-
-    
-
-
-
-  <div class="filter-bar">
-       <!-- Specialty Filter -->
-      <div class="filter-group">
-         <label for="select-specialty">Specialty</label>
-       <select id="select-specialty" class="filter-select">
-         <option value="">-- Choose Specialty --</option>
-         <option value="tc">Tronc Commun (S1 - S4)</option>
-         <option value="res">Networks & Telecoms (S5 - S10)</option>
-       </select>
-      </div>
-
-        <!-- Semester Filter (laissé vide par défaut, JavaScript va le remplir) -->
-      <div class="filter-group">
-        <label for="select-semester">Semester</label>
-        <select id="select-semester" class="filter-select" disabled>
-         <option value="">-- Choose Semester --</option>
-        </select>
-      </div>
-
-  </div> 
-
-  <!-- FIX 1: Added id="empty-state" so cards.js can hide it -->
-  <div id="empty-state" class="empty-state">
+    <!-- Écran d'accueil (Empty State) -->
+    <div id="empty-state" class="empty-state">
       <div class="pointer-arrow">▲</div>
       <div class="empty-state-icon">📚</div>
-      <h2>Welcome to your Study Area !</h2>
-      <p>Select your <strong>Specialization</strong> and 
-        <strong>Semester</strong> above to view your modules.
-      </p>
-  </div>
+      <h2>Bienvenue sur ton Espace d'Études !</h2>
+      <p> Select your  <strong>Speciality</strong> and your <strong>Semester</strong> ci-dessus pour afficher tes modules.</p>
+    </div>
 
-  <!-- FIX 2: Added missing container where cards.js injects cards -->
-  <div id="modules-grid" class="modules-grid hidden"></div>
+    <!-- Conteneur de la Grille de Cartes -->
+    <div id="modules-grid" class="modules-grid hidden"></div>
+  </div>
 
   <script src="js/cards.js"></script>
 

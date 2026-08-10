@@ -1,8 +1,9 @@
 /**
  * 💡 HELPER FUNCTION
  * Declares a course module concisely.
+ * Defaults driveUrl to '#' if not provided.
  */
-const m = (id, specialty, semester, icon, title, description, driveUrl) => ({
+const m = (id, specialty, semester, icon, title, description, driveUrl = "#") => ({
   id, specialty, semester, icon, title, description, driveUrl
 });
 
@@ -11,14 +12,14 @@ const m = (id, specialty, semester, icon, title, description, driveUrl) => ({
  * Configures which semesters belong to each specialty choice.
  */
 const semesterOptionsMap = {
-  // Tronc Commun (Ingéniorat ) : S1, S2, S3, S4
+  // Tronc Commun (Ingéniorat) : S1, S2, S3, S4
   tc: [
     { value: "s1", label: "Semester 1 (S1)" },
     { value: "s2", label: "Semester 2 (S2)" },
     { value: "s3", label: "Semester 3 (S3)" },
     { value: "s4", label: "Semester 4 (S4)" }
   ],
-  // Spécialités (ex: Réseaux, Génie Logiciel, IA...) : à partir du S5
+  // Spécialités (ex: Réseaux & Télécoms, SI) : à partir du S5
   res: [
     { value: "s5", label: "Semester 5 (S5)" },
     { value: "s6", label: "Semester 6 (S6)" }
@@ -31,14 +32,14 @@ const semesterOptionsMap = {
 
 /**
  * 📚 MODULE DATA REPOSITORY
- * Specialty keys: 'info' (Computer Science / Computer Engineering), 'res' (Networks & Telecoms)
+ * Specialty keys: 'tc' (Tronc Commun), 'res' (Networks & Telecoms), 'si' (Information Systems)
  * Semester keys: 's1', 's2', 's3', 's4', 's5', 's6'
  */
 const modulesData = [
   // =========================================================================
   // --- COMPUTER SCIENCE ENGINEERING (COMMON CORE) - SEMESTER 1 ---
   // =========================================================================
-  m(1, "tc", "s1", "💻", "Algorithmics & Data Structures 1 (ADS 1)", "Fundamentals of algorithms, variables, control flow, loops, and 1D/2D arrays.","https://drive.google.com/drive/folders/10bUixTPGIMwSlIi7ECpECBiOwzc74bvc?usp=drive_link"),
+  m(1, "tc", "s1", "💻", "Algorithmics & Data Structures 1 (ADS 1)", "Fundamentals of algorithms, variables, control flow, loops, and 1D/2D arrays.", "https://drive.google.com/drive/folders/10bUixTPGIMwSlIi7ECpECBiOwzc74bvc?usp=drive_link"),
   m(2, "tc", "s1", "⚙️", "Operating Systems 1 (OS 1)", "Introduction to computer systems, OS components, and basic Shell commands."),
   m(3, "tc", "s1", "📐", "Algebra 1", "Set theory, binary relations, algebraic structures (groups, rings, fields), and polynomials."),
   m(4, "tc", "s1", "📊", "Mathematical Analysis 1", "Real-valued functions, limits, continuity, derivatives, and Taylor expansions."),
@@ -79,14 +80,8 @@ const modulesData = [
   m(27, "tc", "s4", "🔤", "Theory of Languages (THL)", "Alphabet, formal grammars, regular expressions, finite state automata (DFA/NFA)."),
   m(28, "tc", "s4", "⚖️", "Computer Science Ethics", "Intellectual property, software licensing, data privacy laws, and professional ethics."),
 
- 
-
   // =========================================================================
-  // --- NETWORKS & TELECOMS (RES) ---
-  // =========================================================================
-
-  // =========================================================================
-  // --- NETWORKS & TELECOMS (RES) -SEMESTER 5 ---
+  // --- NETWORKS & TELECOMS (RES) - SEMESTER 5 ---
   // =========================================================================
   m(29, "res", "s5", "📡", "Telecommunication Principles", "Analog/digital signals, modulation techniques (AM, FM, PSK), and transmission media."),
   m(30, "res", "s5", "💻", "Computer Architecture", "Processor architecture, instruction sets, memory organization, and I/O devices."),
@@ -161,7 +156,7 @@ function renderCards(modules, targetGrid) {
         </div>
         <p class="module-description">${module.description}</p>
       </div>
-      <a href="${module.driveUrl}" target="_blank" rel="noopener noreferrer" class="btn-drive">
+      <a href="${module.driveUrl || '#'}" target="_blank" rel="noopener noreferrer" class="btn-drive">
         <svg style="width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2;" viewBox="0 0 24 24">
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
           <polyline points="15 3 21 3 21 9"></polyline>
@@ -214,11 +209,11 @@ function initializeApp() {
     selectSemester.addEventListener('change', updateDisplay);
   }
 
-  // Initial state on page load
   updateSemesterDropdown();
   updateDisplay();
 }
 
+// Ensure execution after the HTML DOM is fully loaded
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initializeApp);
 } else {
