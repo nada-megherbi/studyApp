@@ -1,3 +1,5 @@
+![Site overview]:[https://github.com/nada-megherbi/studyApp/blob/main/Screenshot%202026-09-22%20221025.png]
+
 # 📚 StudyApp - Computer Engineering Modules
 
 A collaborative web platform designed for computer engineering and networking students to centralize course modules, study resources, and academic materials.
